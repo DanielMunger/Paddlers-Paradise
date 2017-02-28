@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Edit Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole
+
+<h2>Edit Role</h2>
+<a asp-action="Index">List Roles</a> | <a asp-action="Manage">Manage User Role</a>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Id)
+
+    <div>
+        Role name
+    </div>
+    <p>
+        @Html.TextBoxFor(model => model.Name)
+    </p>
+    <input type="submit" value="Save" />
+}

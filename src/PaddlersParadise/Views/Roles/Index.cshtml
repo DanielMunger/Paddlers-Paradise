@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Manage User Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole>
+
+<h2>Roles Listing</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <a asp-action="Create" asp-controller="Roles">Create New Role</a> <span>|</span> <a asp-action="Manage">Manage User Role</a>
+    <hr />
+    <div>
+        @foreach (var role in Model)
+        {
+            <p>
+                @role.Name |
+                <span onclick="return confirm('Are you sure you want to delete this role?')"><a asp-action="Delete" asp-route-roleName="@role.Name" class="delLink" style="color:red;">Delete</a></span>
+                @Html.ActionLink("Edit", "Edit", new { id = @role.Id })
+            </p>
+        }
+    </div>
+}
+else
+{
+    <h1>YOU DON'T HAVE ACCESS TO THIS</h1>
+    <a asp-action="Index" asp-controller="Account">Return from whence you came</a>
+}
