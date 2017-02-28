@@ -11,7 +11,10 @@ namespace PaddlersParadise.ViewModels
         [Required]
         [Display(Name = "UserName")]
         public string UserName { get; set; }
-
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string Email { get; set; } 
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]

@@ -4,15 +4,23 @@
 }
 @using PaddlersParadise.ViewModels
 @model LoginViewModel
-<h2>Log in with your Account</h2>
 <hr />
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.UserName)
-    @Html.TextBoxFor(m => m.UserName)
+<div class="row">
+    <div class="col m4">
+        <h3>Log in with your Account</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName)
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)
 
-    <input type="submit" value="Log in" class="btn btn-default" />
-}
+            <input type="submit" value="Log in" class="btn btn-default" />
+        }
+    </div>
+    <div class="col m6">
+        <h3>Need an Account?</h3>
+        <a class="btn" href="/Account/Register">Register Here</a>
+    </div>
+</div>
