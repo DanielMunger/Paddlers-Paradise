@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace PaddlersParadise.Models
 {
    
@@ -17,6 +18,8 @@ namespace PaddlersParadise.Models
         public string name { get; set; }
         [Key]
         public int id { get; set; }
+
+        
 
     }
 }
