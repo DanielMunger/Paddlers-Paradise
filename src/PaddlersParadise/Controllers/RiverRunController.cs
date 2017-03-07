@@ -7,14 +7,13 @@ using PaddlersParadise.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace PaddlersParadise.Controllers
 {
     public class RiverRunController : Controller
     {
 
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
