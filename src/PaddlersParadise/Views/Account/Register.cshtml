@@ -8,8 +8,8 @@
 
 <div class="row">
     <div class="col m8 text-center">
-        <h2>Register a new user</h2>
-        <hr />
+        <h2>Join the Community!</h2>
+        <hr /><br /><br /><br />
         @using (Html.BeginForm("Register", "Account", FormMethod.Post))
         {
             @Html.LabelFor(m => m.UserName)
@@ -24,7 +24,7 @@
             @Html.LabelFor(m => m.ConfirmPassword)
             @Html.PasswordFor(m => m.ConfirmPassword)
 
-            <input type="submit" value="Register" />
+            <input class="btn" type="submit" value="Register" />
         }
     </div>
 </div>

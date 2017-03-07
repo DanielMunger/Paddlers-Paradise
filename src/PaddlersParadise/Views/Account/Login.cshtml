@@ -4,10 +4,10 @@
 }
 @using PaddlersParadise.ViewModels
 @model LoginViewModel
-<hr />
+
 <div class="row">
     <div class="col m4">
-        <h3>Log in with your Account</h3>
+        <h3>Log In</h3>
         @using (Html.BeginForm())
         {
             @Html.LabelFor(m => m.UserName)
@@ -19,7 +19,8 @@
             <input type="submit" value="Log in" class="btn btn-default" />
         }
     </div>
-    <div class="col m6">
+    <div class="col m2"></div>
+    <div class="col m4">
         <h3>Need an Account?</h3>
         <a class="btn" href="/Account/Register">Register Here</a>
     </div>

@@ -14,6 +14,8 @@ namespace PaddlersParadise.Models
         {
 
         }
+       public virtual DbSet<RiverRun> RiverRuns { get; set; }
+        public virtual DbSet<ApplicationUser> purplepeopleeaters { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
@@ -22,6 +24,9 @@ namespace PaddlersParadise.Models
         {
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=PaddlersParadise;integrated security=True");
         }
-       
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
     }
 }

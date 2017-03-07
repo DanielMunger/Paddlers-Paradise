@@ -1,5 +1,5 @@
---temp-output:c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\obj\Debug\netcoreapp1.0\
---out:c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\bin\Debug\netcoreapp1.0\PaddlersParadise.dll
+--temp-output:C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\obj\Debug\netcoreapp1.0\
+--out:C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\bin\Debug\netcoreapp1.0\PaddlersParadise.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -202,16 +202,24 @@
 --reference:C:\Users\epicodus\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\obj\Debug\netcoreapp1.0\PaddlersParadisedotnet-compile.deps.json",PaddlersParadise.deps.json
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Program.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Startup.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Controllers\AccountController.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Controllers\HomeController.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Controllers\RolesController.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Migrations\20170228015725_Initial.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Migrations\20170228015725_Initial.Designer.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Migrations\ApplicationDbContextModelSnapshot.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Models\ApplicationDbContext.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\Models\ApplicationUser.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\ViewModels\LoginViewModel.cs
-c:\users\epicodus\documents\visual studio 2015\Projects\PaddlersParadise\src\PaddlersParadise\ViewModels\RegisterViewModel.cs
+--resource:"C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\obj\Debug\netcoreapp1.0\PaddlersParadisedotnet-compile.deps.json",PaddlersParadise.deps.json
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Program.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Startup.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Controllers\AccountController.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Controllers\HomeController.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Controllers\RiverRunController.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Controllers\RolesController.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170228015725_Initial.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170228015725_Initial.Designer.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170306220303_ModelChange4.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170306220303_ModelChange4.Designer.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170306223729_ModelChange.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170306223729_ModelChange.Designer.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170307023228_Maybe.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\20170307023228_Maybe.Designer.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Migrations\ApplicationDbContextModelSnapshot.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Models\ApplicationDbContext.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Models\ApplicationUser.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\Models\RiverRun.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\ViewModels\LoginViewModel.cs
+C:\Users\epicodus\Desktop\Paddlers-Paradise\src\PaddlersParadise\ViewModels\RegisterViewModel.cs

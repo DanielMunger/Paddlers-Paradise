@@ -26,7 +26,7 @@ namespace SalesTracker.Controllers
         {
             if (User.Identity.Name != null)
             {
-                return View();
+                return View(_db.purplepeopleeaters.ToList());
             }
             else
             {

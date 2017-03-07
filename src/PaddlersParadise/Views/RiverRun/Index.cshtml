@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Manage User Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<PaddlersParadise.Models.RiverRun>
+<h1>River/Run Index</h1>
+
+<table>
+    <thread>
+        <tr>
+            <th>River</th>
+            <th>Run</th>
+            <th>State</th>
+            <th>Class</th>
+            <th>Current Flow</th>
+        </tr>
+    </thread>
+    <tbody>
+        <tr>
+            <td>Colorado River</td>
+            <td>Westwater</td>
+            <td>UT</td>
+            <td>III to IV</td>
+            <td><a>2910.0 cfs</a></td>
+        </tr>
+        @Model.Count()
+        {
+            <tr>
+                <td>riverrun.river_section</td>
+                <td>Westwater</td>
+                <td>riverrun</td>
+                <td>III to IV</td>
+                <td><a>ajax call</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
