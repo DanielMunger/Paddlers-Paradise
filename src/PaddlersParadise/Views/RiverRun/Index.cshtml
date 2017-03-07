@@ -2,6 +2,9 @@
     ViewData["Title"] = "Manage User Roles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using System;
+@using System.Text.RegularExpressions;
+
 @model List<PaddlersParadise.Models.RiverRun>
 <h1>River/Run Index</h1>
 
@@ -23,13 +26,29 @@
             <td>III to IV</td>
             <td><a>2910.0 cfs</a></td>
         </tr>
-        @Model.Count()
-        {
+       @foreach (var riverrun in Model)
+       {
+
+           var riverString = riverrun.river_section.Split('[');
+           string river = riverString[0];
+           var runString = riverString[1].Split(']');
+           string run = runString[1];
+           string pattern = @"\[1-9]+[.]"; //Regex pattern seems to not be working
+           string pattern2 = @"";
+           string[] result = Regex.Split(run, pattern);
+           foreach(var match in result)
+           {
+               Console.WriteLine(match);
+
+           }
+           string[] result2 = Regex.Split(run, pattern2);
             <tr>
-                <td>riverrun.river_section</td>
-                <td>Westwater</td>
-                <td>riverrun</td>
-                <td>III to IV</td>
+                <td>
+                    @river
+                </td>
+                <td>@result[0]</td>
+                <td>@{@riverrun.state.ToUpper();}</td>
+                <td>@riverrun.riverClass</td>
                 <td><a>ajax call</a></td>
             </tr>
         }
