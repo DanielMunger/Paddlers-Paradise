@@ -14,7 +14,7 @@ namespace PaddlersParadise.Models
         {
 
         }
-       public virtual DbSet<RiverRun> RiverRuns { get; set; }
+        public virtual DbSet<RiverRun> RiverRuns { get; set; }
         public virtual DbSet<ApplicationUser> purplepeopleeaters { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
