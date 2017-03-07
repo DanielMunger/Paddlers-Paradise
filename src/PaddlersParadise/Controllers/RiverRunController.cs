@@ -33,11 +33,12 @@ namespace PaddlersParadise.Controllers
         [HttpPost]
         public IActionResult USGSCall(string gaugeId)
         {
-            Console.WriteLine("controller gauge value:      " + gaugeId);
+            
             USGSResponse usgsResponse = new USGSResponse();
             RootObject response = usgsResponse.USGSCall(gaugeId);
             //parse json file here.
             //
+            Console.WriteLine("timeSeries:****"+response.value.timeSeries[0].values[0].value[0].value);
             return Json(response);
         }
     }

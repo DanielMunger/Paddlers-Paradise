@@ -1,5 +1,4 @@
-﻿<script src="~/js/RiverIndex.js"></script>
-@{
+﻿@{
     ViewData["Title"] = "Manage User Roles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -20,16 +19,9 @@
         </tr>
     </thread>
     <tbody>
-        <tr>
-            <td>Colorado River</td>
-            <td>Westwater</td>
-            <td>UT</td>
-            <td>III to IV</td>
-            <td><a>2910.0 cfs</a></td>
-        </tr>
        @foreach (var riverrun in Model)
        {
-
+          
            var riverString = riverrun.river_section.Split('[');
            string river = riverString[0];
            var runString = riverString[1].Split(']');
@@ -50,8 +42,22 @@
                 <td>@run</td>
                 <td>@{@riverrun.state.ToUpper();}</td>
                 <td>@riverrun.riverClass</td>
-                <td><a>ajax call</a></td>
+                <td id="@riverrun.id" data-value="@riverrun.gauge_id"></td>
             </tr>
-        }
+                <script>
+                    var gaugeId = @riverrun.gauge_id;
+                    $.ajax({
+                        url: "/RiverRun/USGSCall/",
+                        type: 'POST',
+                        data: { gaugeId: gaugeId },
+                        datatype: 'text',
+                        success: function (result) {
+                            $('#'+@riverrun.id).html('<a href="'+@riverrun.id+'">'+result.value.timeSeries[0].values[0].value[0].value+'</a>')
+                        }
+                    });
+                </script>
+        
+    }
     </tbody>
 </table>
+@*<script src="~/js/RiverIndex.js"></script>*@

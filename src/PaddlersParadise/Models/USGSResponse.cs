@@ -197,7 +197,7 @@ namespace PaddlersParadise.Models
         //API Functions
         public RootObject USGSCall(string gaugeId)
         {
-            Console.WriteLine("gaugeId:**********************"+gaugeId);
+            
             var client = new RestClient("https://waterservices.usgs.gov/nwis/iv/");
             var request = new RestRequest("?site=" + gaugeId + "&format=json&indent=on");
 
@@ -206,7 +206,7 @@ namespace PaddlersParadise.Models
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
-            Console.WriteLine("response:**************************"+response.Content);
+            
             RootObject jsonResponse = JsonConvert.DeserializeObject<RootObject>(response.Content); 
             return jsonResponse;
         }
