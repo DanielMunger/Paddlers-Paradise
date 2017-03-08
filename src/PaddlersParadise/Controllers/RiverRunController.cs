@@ -42,9 +42,13 @@ namespace PaddlersParadise.Controllers
             return Json(response);
         }
 
-        public IActionResult Details(int id)
+        public IActionResult RunDetails(int id)
         {
             return View(db.RiverRuns.FirstOrDefault(i=>i.id == id));
+        }
+        public IActionResult GaugeDetails(int id)
+        {
+            return View();
         }
     }
 }
