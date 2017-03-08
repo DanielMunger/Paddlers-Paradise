@@ -41,5 +41,10 @@ namespace PaddlersParadise.Controllers
             Console.WriteLine("timeSeries:****"+response.value.timeSeries[0].values[0].value[0].value);
             return Json(response);
         }
+
+        public IActionResult Details(int id)
+        {
+            return View(db.RiverRuns.FirstOrDefault(i=>i.id == id));
+        }
     }
 }

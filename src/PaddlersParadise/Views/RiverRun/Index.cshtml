@@ -15,7 +15,7 @@
             <th>Run</th>
             <th>State</th>
             <th>Class</th>
-            <th>Current Flow</th>
+            <th>Current Flow (ft/s^3)/(ft)</th>
         </tr>
     </thread>
     <tbody>
@@ -39,7 +39,7 @@
                 <td>
                     @river
                 </td>
-                <td>@run</td>
+                <td><a href="/RiverRun/Details/@riverrun.id">@run</a></td>
                 <td>@{@riverrun.state.ToUpper();}</td>
                 <td>@riverrun.riverClass</td>
                 <td id="@riverrun.id" data-value="@riverrun.gauge_id"></td>
@@ -52,7 +52,8 @@
                         data: { gaugeId: gaugeId },
                         datatype: 'text',
                         success: function (result) {
-                            $('#'+@riverrun.id).html('<a href="'+@riverrun.id+'">'+result.value.timeSeries[0].values[0].value[0].value+'</a>')
+                            console.log
+                            $('#'+@riverrun.id).html('<a href="/RiverRun/Details/'+@riverrun.id+'">'+result.value.timeSeries[0].values[0].value[0].value+'</a>')
                         }
                     });
                 </script>
