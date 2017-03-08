@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Manage User Roles";
+    ViewData["Title"] = "Paddlers Notebook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System;
@@ -39,7 +39,7 @@
                 <td>
                     @river
                 </td>
-                <td><a href="/RiverRun/Details/@riverrun.id">@run</a></td>
+                <td><a href="/RiverRun/RunDetails/@riverrun.id">@run</a></td>
                 <td>@{@riverrun.state.ToUpper();}</td>
                 <td>@riverrun.riverClass</td>
                 <td id="@riverrun.id" data-value="@riverrun.gauge_id"></td>
@@ -53,7 +53,18 @@
                         datatype: 'text',
                         success: function (result) {
                             console.log
-                            $('#'+@riverrun.id).html('<a href="/RiverRun/Details/'+@riverrun.id+'">'+result.value.timeSeries[0].values[0].value[0].value+'</a>')
+                            var unit = result.value.timeSeries[0].variable.unit.unitCode;
+                            var flow = result.value.timeSeries[0].values[0].value[0].value
+                            if(unit == "deg C")
+                            {
+                                unit = "Gage height, ft"
+                            }
+                            if(flow == "-999999")
+                            {
+                                flow = "Flow Unavailable"
+                                unit = ""
+                            }
+                            $('#'+@riverrun.id).html('<a href="/RiverRun/GaugeDetails/'+@riverrun.id+'">'+flow+' '+unit+'</a>')
                         }
                     });
                 </script>

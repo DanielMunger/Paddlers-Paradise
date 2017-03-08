@@ -1,0 +1,46 @@
+﻿<script src="~/js/RunDetails.js"></script>
+@{
+    ViewData["Title"] = "Paddlers Notebook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PaddlersParadise.Models.RiverRun
+
+
+@{
+    var riverSection = @Model.river_section;
+    var river = riverSection.Split('[');
+    var riverString = river[0];
+    var section = riverSection.Split(']');
+    var sectionString = section[1];
+
+}
+<div class="contianer" style="margin-top: 50px;">
+    <h4>@sectionString</h4>
+    <h5 id="gaugeId" value="@Model.gauge_id">@Model.gauge_id</h5>
+    @*make hidden*@
+    <table style="max-width: 40%; margin-top:50px">
+        <thread>
+            <tr>
+                <th>River</th>
+                <th align="right">@riverString</th>
+            </tr>
+            <tr>
+                <th>Section</th>
+                <th>@sectionString</th>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <th>@Model.riverClass</th>
+            </tr>
+            <tr>
+                <th>Current Flow</th>
+                <th id="currentFlow"></th>
+            </tr>
+            <tr>
+                <th>USGS Gauge</th>
+                <th id="gaugeName"></th>
+            </tr>
+            
+        </thread>
+    </table>
+</div>
