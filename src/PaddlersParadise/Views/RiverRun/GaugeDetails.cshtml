@@ -1,9 +1,46 @@
-﻿@{
+﻿<script src="~/js/GaugeDetails.js"></script>
+@{
     ViewData["Title"] = "Paddlers Notebook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>Gauge Details</h1>
 
-<div class="progress">
+    
+<div id="loadingBar" style="margin-top: 100px" class="progress container black">
     <div class="indeterminate"></div>
+</div>
+    
+<div class="row" id="gaugeDetails">     
+    <div class="col m6">
+         <h3>Gauge Details</h3>
+            <table margin-top:50px">
+                <thread>
+                    <tr>
+                        USGS Gauge Information:
+                    </tr>
+                    <tr>
+                        <th>Gauge Name</th>
+                        <th id="gaugeName"></th>
+                    </tr>
+                    <tr>
+                        <th>Current Flow</th>
+                        <th id="currentFlow"></th>
+                    </tr>
+                    <tr>
+                        <th>USGS Gauge Id</th>
+                        <th id="gaugeId"></th>
+                    </tr>
+                    <tr>
+                        <th>Agency</th>
+                        <th id="agency"></th>
+                    </tr>
+                    <tr>
+                        <th>Network</th>
+                        <th id="network"></th>
+                    </tr>
+                </thread>
+            </table>
+        </div>
+        <div class="col m6">
+            <h3>Gauge Location:</h3>
+     </div>
 </div>
