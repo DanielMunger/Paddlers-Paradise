@@ -51,8 +51,33 @@
             @if (User.IsInRole("Admin"))
             {
                 <div style="margin-top: 15px">
-                    <a href="/RiverRun/Edit/@Model.id" class="btn">Edit this Entry</a>
+                    <a data-target="modal2" class="waves-effect waves-light btn">Edit this Entry</a>
                     <a data-target="modal1" class="waves-effect waves-light btn"> Delete this Entry</a>
+                </div>
+                <div id="modal2" class="modal">
+                    <div class="modal-content">
+                        <h4>Delete Confirmation</h4>
+                        <p>Are you sure you want to delete this entry? It will be permanently removed from the database.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="contianer">
+                            <form method="post" asp-action="Edit" asp-controller="RiverRun">
+                                <label for="section">Section Name</label>
+                                <input type="text" name="section"  value="@sectionString" required />
+                                <label for="river">River Name</label>
+                                <input type="text" name="river" value="@riverString" required />
+                                <label for="riverClass">Class</label>
+                                <input type="text" name="riverClass" value="@Model.riverClass" required />
+                                <label for="state">State</label>
+                                <input type="text" name="state" value="@Model.state" required />
+                                <label for="gaugeId">Gauge Id</label>
+                                <input type="number" name="gaugeId" value="@Model.gauge_id" required />
+                                <label for="gaugeNamw">Gauge Name</label>
+                                <input type="text" name="gaugeName" value="@Model.name" required />
+                                <input class="btn" type="submit" value="Edit" />
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div id="modal1" class="modal">
                     <div class="modal-content">
