@@ -9,7 +9,14 @@ table, th, tr, td{
 }
  #map {
      
-        height: 100%;
+        height: 400px;
         width: 600px;
         /*overflow:auto;*/
-    }
+}
+#dropdown4 {
+    font-size: 2rem;
+}
+.material-icons{
+    display: inline-flex;
+    vertical-align: top;
+}

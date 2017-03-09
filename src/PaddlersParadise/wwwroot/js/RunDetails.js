@@ -36,7 +36,7 @@
 
 var initMap = function (latitude, longitude, gaugeName) {
     if (latitude != null && longitude != null) {
-        var service;
+        //var service;
         var center = { lat: latitude, lng: longitude };
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
@@ -53,11 +53,11 @@ var initMap = function (latitude, longitude, gaugeName) {
             map: map,
             title: ''
         });
-        var request = {
-            location: center,
-            radius: '5000',
-            types: ['food']
-        };
+        //var request = {
+        //    location: center,
+        //    radius: '5000',
+        //    types: ['food']
+        //};
 
         //service = new google.maps.places.PlacesService(map);
         //service.nearbySearch(request, callback());

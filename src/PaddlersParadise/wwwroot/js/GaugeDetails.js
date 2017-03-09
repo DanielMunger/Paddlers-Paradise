@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿
+
+$(document).ready(function () {
     var url = window.location.pathname;
     var urlArray = url.split('/');
     var gaugeId = urlArray[3];
