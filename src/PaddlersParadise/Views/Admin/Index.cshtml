@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Manage User Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Administrative Tasks</h3>
+<ul class="collection">
+    <li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title">Create new Run</span>
+        <p>
+            Add river and gauge<br>
+            information to database
+        </p>
+        <a href="/RiverRun/Create" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title">Edit Runs</span>
+        <p>
+            Update existing<br>
+            database content
+        </p>
+        <a href="/RiverRun/Edit" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title">Manage Roles</span>
+        <p>
+            Update, Create<br>
+            and assign User Roles
+        </p>
+        <a href="/Roles" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    @*<li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title">Title</span>
+        <p>
+            First Line <br>
+            Second Line
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>*@
+</ul>

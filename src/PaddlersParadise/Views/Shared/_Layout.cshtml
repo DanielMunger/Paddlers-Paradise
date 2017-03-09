@@ -2,8 +2,11 @@
 
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
     <meta name="viewport" content="width=device-width" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="~/js/NavbarScript.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,29 +14,80 @@
 
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARhB170H1_IihPz-E4A-7fIJ8Hpatt5gg&callback=initMap">
-    </script>
+   
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <nav>
+        
         <ul id="dropdown1" class="dropdown-content">
             <li class="divider"></li>
             <li><a href="/RiverRun/">Rivers/Runs</a></li>
             <li><a href="#!">Gauges</a></li>
             <li><a href="#!">Other Category??</a></li>
         </ul>
+
+        <ul id="dropdown2" class="dropdown-content">
+            <li class="divider"></li>
+            @if (!User.Identity.IsAuthenticated)
+            {
+            <li>
+                <a href="/Account/Login">Login</a>
+            </li>
+            }
+            else {
+            <li>
+                @using (Html.BeginForm("LogOff", "Account"))
+                {
+                    <input type="submit" class="btn btn-default" value="Log out" />
+                }
+            </li>
+
+            }
+            
+            <li><i class="material-icons black"><a style="font-size:2rem" href="/Account/Register">person_add</a></i></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li><i class="material-icons black"><a style="font-size:2rem" href="/Admin">supervisor_account</a></i></li>
+            }
+        </ul>
+        <ul id="dropdown3" class="dropdown-content">
+            <li class="divider"></li>
+            <li><a href="/RiverRun/">Rivers/Runs</a></li>
+            <li><a href="#!">Gauges</a></li>
+            <li><a href="#!">Other Category??</a></li>
+        </ul>
+
+        <ul id="dropdown4" class="dropdown-content">
+            <li class="divider"></li>
+            <li>
+                <a href="/Account/Login"><span>Login</span></a>
+            </li>
+            <li><i class="material-icons"><a style="font-size:2rem;" href="/Account/Register">person_add</a></i></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li><span>Admin</span><i class="material-icons"><a style="font-size:2rem" href="/Admin">supervisor_account</a></i></li>
+            }
+        </ul>
+
         <div class="nav-wrapper black">
             <a href="/" class="brand-logo">Paddlers Notebook</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a data-beloworigin="true" class="dropdown-button" href="#!" data-activates="dropdown1">Rivers<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a href="/Account/Login">Login</a></li>
-                <li><i class="material-icons"><a style="font-size:2rem" href="/Account/Register">person_add</a></i></li>
-                @if (User.IsInRole("Admin"))
-                {
-                <li><i class="material-icons"><a style="font-size:2rem" href="/Roles">supervisor_account</a></i></li>
-                }
+                <li>
+                    <a data-beloworigin="true" class="dropdown-button" href="#!" data-activates="dropdown1">Rivers<i class="material-icons right">arrow_drop_down</i></a>
+                </li>
+                <li>
+                    <a data-beloworigin="true" class="dropdown-button" href="#!" data-activates="dropdown2">Users<i class="material-icons right">arrow_drop_down</i></a>
+                </li>               
+            </ul>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="side-nav" id="mobile-demo">
+                <li>
+                    <a data-beloworigin="true" class="dropdown-button" href="#!" data-activates="dropdown3">Rivers<i class="material-icons right">arrow_drop_down</i></a>
+                </li>
+                <li>
+                    <a data-beloworigin="true" class="dropdown-button" href="#!" data-activates="dropdown4">Users<i class="material-icons right">arrow_drop_down</i></a>
+                </li>
             </ul>
         </div>
     </nav>
