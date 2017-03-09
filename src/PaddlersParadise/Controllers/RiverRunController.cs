@@ -58,9 +58,15 @@ namespace PaddlersParadise.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(RiverRun riverrun)
+        public IActionResult Create(string section, string river, string riverClass, string state, int gaugeId, string gaugeName)
         {
-            return RedirectToAction("Index");
+            string State = state.ToUpper();
+            string riverSection = river + " " + "[" + State + "]"+" "+section;
+            Debug.WriteLine("riverSection" + riverSection);
+            RiverRun newRun = new RiverRun(riverSection, riverClass, state, gaugeId, gaugeName);
+            db.RiverRuns.Add(newRun);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Admin");
         }
         [Authorize(Roles = "Admin")]
         public IActionResult Edit()

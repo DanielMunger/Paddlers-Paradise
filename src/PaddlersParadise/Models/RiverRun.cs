@@ -19,7 +19,17 @@ namespace PaddlersParadise.Models
         [Key]
         public int id { get; set; }
 
-        
+        public RiverRun()
+        {
 
+        }
+        public RiverRun(string riverSection, string RiverClass, string State, int gaugeId, string gaugeName)
+        {
+            river_section = riverSection;
+            riverClass = RiverClass;
+            state = State;
+            gauge_id = gaugeId;
+            name = gaugeName;
+        }
     }
 }

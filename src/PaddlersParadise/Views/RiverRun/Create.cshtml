@@ -2,4 +2,23 @@
     ViewData["Title"] = "Manage User Roles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h3>Create new Run</h3>
+<h3 style="margin-top:50px">Create a New Run</h3>
+<div class="row">
+    <div class="col m6">
+        <form method="post" asp-action="Create" asp-controller="RiverRun">
+            <label for="section">Section Name</label>
+            <input type="text" name="section" required />
+            <label for="river">River Name</label>
+            <input type="text" name="river" required />
+            <label for="riverClass">Class</label>
+            <input type="text" name="riverClass" required />
+            <label for="state">State</label>
+            <input type="text" name="state" required />
+            <label for="gaugeId">Gauge Id</label>
+            <input type="number" name="gaugeId" required />
+            <label for="gaugeNamw">Gauge Name</label>
+            <input type="text" name="gaugeName" required />
+            <input class="btn" type="submit" value="Add Run"/>
+        </form>
+    </div>
+</div>
