@@ -56,7 +56,7 @@ var initMap = function (latitude, longitude, gaugeName) {
     var marker = new google.maps.Marker({
         position: center,
         map: map,
-        title: 'Marker Title'
+        title: ''
     });
     var contentString = '<div id="content">' +
             '<div id="siteNotice">' +

@@ -42,7 +42,19 @@
                 <td><a href="/RiverRun/RunDetails/@riverrun.id">@run</a></td>
                 <td>@{@riverrun.state.ToUpper();}</td>
                 <td>@riverrun.riverClass</td>
-                <td id="@riverrun.id" data-value="@riverrun.gauge_id"></td>
+                <td id="@riverrun.id" data-value="@riverrun.gauge_id">
+                    <div class="preloader-wrapper small active">
+                        <div class="spinner-layer spinner-green-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
             </tr>
                 <script>
                     var gaugeId = @riverrun.gauge_id;

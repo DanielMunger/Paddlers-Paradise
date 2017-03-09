@@ -14,7 +14,7 @@ using PaddlersParadise.Models;
 namespace PaddlersParadise.Controllers
 {
 
-    [Authorize(Roles = "Admin")]
+   [Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
         private readonly ApplicationDbContext _db;

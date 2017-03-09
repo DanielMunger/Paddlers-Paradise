@@ -8,6 +8,8 @@ table, th, tr, td{
     display: none;
 }
  #map {
-        height: 400px;
+     
+        height: 100%;
         width: 600px;
+        /*overflow:auto;*/
     }

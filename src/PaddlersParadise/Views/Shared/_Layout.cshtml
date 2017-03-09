@@ -29,10 +29,11 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a data-beloworigin="true" class="dropdown-button" href="#!" data-activates="dropdown1">Rivers<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a href="/Account/Login">Login</a></li>
-                <li><a href="/Account/Register">Register</a></li>
+                <li><i class="material-icons"><a style="font-size:2rem" href="/Account/Register">person_add</a></i></li>
                 @if (User.IsInRole("Admin"))
                 {
-                <li><a href="/Roles">Admin</a></li>}
+                <li><i class="material-icons"><a style="font-size:2rem" href="/Roles">supervisor_account</a></i></li>
+                }
             </ul>
         </div>
     </nav>
