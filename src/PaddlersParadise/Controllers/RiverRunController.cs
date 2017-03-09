@@ -7,6 +7,7 @@ using PaddlersParadise.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 using static PaddlersParadise.Models.USGSResponse;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PaddlersParadise.Controllers
 {
@@ -49,6 +50,28 @@ namespace PaddlersParadise.Controllers
         public IActionResult GaugeDetails(int id)
         {
             return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(RiverRun riverrun)
+        {
+            return RedirectToAction("Index");
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult Edit()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(RiverRun riverrun)
+        {
+            return RedirectToAction("Index");
         }
     }
 }
