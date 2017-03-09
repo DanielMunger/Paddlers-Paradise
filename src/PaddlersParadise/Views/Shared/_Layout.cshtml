@@ -12,8 +12,8 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="~/css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css">
    
     <title>@ViewBag.Title</title>
 </head>
@@ -60,9 +60,21 @@
 
         <ul id="dropdown4" class="dropdown-content">
             <li class="divider"></li>
-            <li>
-                <a href="/Account/Login"><span>Login</span></a>
-            </li>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <li>
+                    <a href="/Account/Login">Login</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    @using (Html.BeginForm("LogOff", "Account"))
+                {
+                        <input type="submit" class="btn btn-default" value="Log out" />
+                    }
+                </li>
+            }
             <li><i class="material-icons"><a style="font-size:2rem;" href="/Account/Register">person_add</a></i></li>
             @if (User.IsInRole("Admin"))
             {
