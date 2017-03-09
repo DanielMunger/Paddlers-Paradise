@@ -1,5 +1,8 @@
-﻿<script src="~/js/RunDetails.js"></script>
-@*<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV5TRR98QXzJxqACiKIRRKN4KGpm5-XQk&libraries=places"></script>*@
+﻿<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByP1VYfoEQ9LFBhnFq8Q5z-iU2NFX-xrg&callback=initMap">
+</script>
+<script src="~/js/RunDetails.js"></script>
+
 @{
     ViewData["Title"] = "Paddlers Notebook";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -47,7 +50,7 @@
             </table>
         </div>
         <div class="col m6">
-            <div id="map"><iframe id="map"></iframe></div>
+            <div id="map"></div>
         </div>
     </div>
 </div>
