@@ -79,5 +79,14 @@ namespace PaddlersParadise.Controllers
         {
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public IActionResult Delete(int runId)
+        {
+            Debug.WriteLine("fuck this shit");
+            var selectedRun = db.RiverRuns.FirstOrDefault(products => products.id == runId);
+            db.RiverRuns.Remove(selectedRun);
+            db.SaveChanges();
+            return RedirectToAction("Index", "RiverRun");
+        }
     }
 }

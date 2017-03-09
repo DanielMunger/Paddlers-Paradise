@@ -1,5 +1,20 @@
 ﻿$(document).ready(function () {
-    detectBrowser()
+    detectBrowser();
+    $('.modal').modal();
+    //$('#deleteButton').click(function(){
+    //    runId = $('#deleteButton').attr('value');
+    //    console.log(runId);
+    //    $.ajax({
+    //        url: "/RiverRun/Delete/",
+    //        type: "POST",
+    //        data: { runId : runId },
+    //        datatype: 'text',
+    //        success: function (result) {
+    //            console.log(result)
+               
+    //        }
+    //    });
+    //});
     var url = window.location.pathname;
     var urlArray = url.split('/');
     var runId = urlArray[3];

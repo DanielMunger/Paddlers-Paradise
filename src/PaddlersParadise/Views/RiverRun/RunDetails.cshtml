@@ -23,7 +23,7 @@
     <h5 style="display:none" id="gaugeId" value="@Model.gauge_id">@Model.gauge_id</h5>
     <div class="row">
         <div class="col m6">
-            <table style="margin-top:50px">
+            <table style="margin-top:50px;">
                 <thread>
                     <tr>
                         <th>River</th>
@@ -48,9 +48,30 @@
 
                 </thread>
             </table>
+            @if (User.IsInRole("Admin"))
+            {
+                <div style="margin-top: 15px">
+                    <a href="/RiverRun/Edit/@Model.id" class="btn">Edit this Entry</a>
+                    <a data-target="modal1" class="waves-effect waves-light btn"> Delete this Entry</a>
+                </div>
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Delete Confirmation</h4>
+                        <p>Are you sure you want to delete this entry? It will be permanently removed from the database.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                        <form method="post" asp-action="Delete" asp-controller="RiverRun">
+                            <input type="hidden" value="@Model.id" name="runId" />
+                            <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Delete"/>
+                        </form>
+                    </div>
+                </div>
+            }
         </div>
         <div class="col m6">
             <div id="map"></div>
         </div>
     </div>
+   
 </div>
