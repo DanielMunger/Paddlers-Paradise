@@ -197,7 +197,9 @@ namespace PaddlersParadise.Models
         //API Functions
         public RootObject USGSCall(string gaugeId)
         {
-            
+            //To-Do:
+            //need exception for incorrect gauge id value. 
+            //
             var client = new RestClient("https://waterservices.usgs.gov/nwis/iv/");
             var request = new RestRequest("?site=" + gaugeId + "&format=json&indent=on");
 
