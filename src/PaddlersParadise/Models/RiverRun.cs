@@ -16,7 +16,7 @@ namespace PaddlersParadise.Models
         public string state { get; set; }
         public int gauge_id { get; set; }
         public string name { get; set; }
-        public string description { get; set}
+        public string description { get; set; }
 
         [Key]
         public int id { get; set; }

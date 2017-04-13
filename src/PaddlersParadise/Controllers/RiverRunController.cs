@@ -91,7 +91,8 @@ namespace PaddlersParadise.Controllers
         [HttpPost]
         public IActionResult AddDescription(string description, int runId)
         {
-            var selectedRun = db.RiverRuns.FirstOrDefault()
+            var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
+            selectedRun.description = description;
             return RedirectToAction("RunDetails", runId);
         }
     }
