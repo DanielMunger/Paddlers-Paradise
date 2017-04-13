@@ -28,7 +28,7 @@ namespace PaddlersParadise.Controllers
         public IActionResult Index()
         {
             var riverList = db.RiverRuns.ToList();
-            Debug.WriteLine("riverlist: "+riverList);
+            //Debug.WriteLine("riverlist: "+riverList);
             return View(riverList);
         }
         [HttpPost]
@@ -39,12 +39,13 @@ namespace PaddlersParadise.Controllers
             RootObject response = usgsResponse.USGSCall(gaugeId);
             //parse json file here.
             //
-            Console.WriteLine("timeSeries:****"+response.value.timeSeries[0].values[0].value[0].value);
+            //Console.WriteLine("timeSeries:****"+response.value.timeSeries[0].values[0].value[0].value);
             return Json(response);
         }
 
         public IActionResult RunDetails(int id)
         {
+            Debug.WriteLine("*************RunId" + id);
             return View(db.RiverRuns.FirstOrDefault(i=>i.id == id));
         }
         public IActionResult GaugeDetails(int id)
@@ -91,8 +92,10 @@ namespace PaddlersParadise.Controllers
         [HttpPost]
         public IActionResult AddDescription(string description, int runId)
         {
+            
             var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
             selectedRun.description = description;
+            db.SaveChanges();
             return RedirectToAction("RunDetails", runId);
         }
     }
