@@ -28,7 +28,7 @@ namespace PaddlersParadise.Controllers
         public IActionResult Index()
         {
             var riverList = db.RiverRuns.ToList();
-            //Debug.WriteLine("riverlist: "+riverList);
+          
             return View(riverList);
         }
         [HttpPost]
@@ -42,7 +42,7 @@ namespace PaddlersParadise.Controllers
             //Console.WriteLine("timeSeries:****"+response.value.timeSeries[0].values[0].value[0].value);
             return Json(response);
         }
-
+        
         public IActionResult RunDetails(int id)
         {
             Debug.WriteLine("*************RunId" + id);
@@ -83,10 +83,11 @@ namespace PaddlersParadise.Controllers
         [HttpPost]
         public IActionResult Delete(int runId)
         {
-            Debug.WriteLine("fuck this shit");
+            
             var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
             db.RiverRuns.Remove(selectedRun);
             db.SaveChanges();
+            
             return RedirectToAction("Index", "RiverRun");
         }
         [HttpPost]
@@ -96,7 +97,8 @@ namespace PaddlersParadise.Controllers
             var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
             selectedRun.description = description;
             db.SaveChanges();
-            return RedirectToAction("RunDetails", runId);
+            Debug.WriteLine("************Run Id after update: " + runId);
+            return RedirectToAction("RunDetails", new { id = runId });
         }
     }
 }
