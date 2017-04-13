@@ -8,6 +8,10 @@ table, th, tr, td{
 #gaugeDetails {
     display: none;
 }
+#runDetails {
+    display:none;
+    margin-top: 0px;
+}
  #map {
      
         height: 400px;
@@ -20,4 +24,7 @@ table, th, tr, td{
 .material-icons{
     display: inline-flex;
     vertical-align: top;
+}
+nav {
+    width : 100%;
 }

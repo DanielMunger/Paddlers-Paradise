@@ -44,7 +44,9 @@
                 unit = ""
             }
             $('#currentFlow').html('<a href="/RiverRun/GaugeDetails/'+gaugeId+'">'+flow+' '+unit+'</a>');
-            $('#gaugeName').html('<a target="_blank" href="https://waterdata.usgs.gov/'+state+'/nwis/uv?site_no='+gaugeId + '">' + gaugeName + '</a>');
+            $('#gaugeName').html('<a target="_blank" href="https://waterdata.usgs.gov/' + state + '/nwis/uv?site_no=' + gaugeId + '">' + gaugeName + '</a>');
+            $('#loadingBar').hide();
+            $('#runDetails').show();
         }
     });
 })
@@ -113,9 +115,10 @@ function detectBrowser() {
     var mapdiv = document.getElementById("map");
 
     if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1) {
-        
-        mapdiv.style.width = '100%';
-        mapdiv.style.height = '100%';
+        console.log("mobile device detected");
+        mapdiv.style.marginTop = '10px';
+        mapdiv.style.width = '350px';
+        mapdiv.style.height = '250px';
     } else {
         mapdiv.style.width = '600px';
         mapdiv.style.height = '400px';

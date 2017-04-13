@@ -1,6 +1,7 @@
 ﻿
 
 $(document).ready(function () {
+    detectBrowser();
     var url = window.location.pathname;
     var urlArray = url.split('/');
     var gaugeId = urlArray[3];
@@ -90,5 +91,20 @@ var initMap = function (latitude, longitude, gaugeName) {
     //for (var i = 0, feature; feature = features[i]; i++) {
     //    addMarker(feature);
     //}
+    }
+}
+function detectBrowser() {
+    var useragent = navigator.userAgent;
+    var mapdiv = document.getElementById("map");
+
+    if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1) {
+        console.log("mobile device detected");
+        mapdiv.style.marginTop = '10px';
+        mapdiv.style.width = '350px';
+        mapdiv.style.height = '250px';
+    } else {
+        mapdiv.style.width = '600px';
+        mapdiv.style.height = '400px';
+        //mapdiv.style.overflow = 'auto'
     }
 }
