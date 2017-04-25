@@ -100,5 +100,10 @@ namespace PaddlersParadise.Controllers
             Debug.WriteLine("************Run Id after update: " + runId);
             return RedirectToAction("RunDetails", new { id = runId });
         }
+        [HttpPost]
+        public IActionResult AddExperience(string description, int runId)
+        {
+            return RedirectToAction("RunDetails", new { id = runId });
+        }
     }
 }
