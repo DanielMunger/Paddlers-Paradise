@@ -15,10 +15,10 @@ namespace PaddlersParadise.Models
         public virtual RiverRun riverRun { get; set; }
         public DateTime postedTime { get; set; }
 
-        public Experience(string Description, ApplicationUser User, RiverRun RiverRun)
+        public Experience(string Description, RiverRun RiverRun)
         {
             experienceDescription = Description;
-            experienceUser = User;
+           // experienceUser = User;
             riverRun = RiverRun;
             postedTime = DateTime.Now;
         }

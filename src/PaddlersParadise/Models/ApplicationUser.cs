@@ -8,6 +8,6 @@ namespace PaddlersParadise.Models
 {
     public class ApplicationUser : IdentityUser
     {
-
+        public virtual ICollection<Experience> Experiences { get; set; }
     }
 }

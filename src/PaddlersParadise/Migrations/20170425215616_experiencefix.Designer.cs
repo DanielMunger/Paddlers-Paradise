@@ -8,9 +8,10 @@ using PaddlersParadise.Models;
 namespace PaddlersParadise.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170425215616_experiencefix")]
+    partial class experiencefix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -256,7 +257,7 @@ namespace PaddlersParadise.Migrations
             modelBuilder.Entity("PaddlersParadise.Models.Experience", b =>
                 {
                     b.HasOne("PaddlersParadise.Models.ApplicationUser", "experienceUser")
-                        .WithMany("Experiences")
+                        .WithMany()
                         .HasForeignKey("experienceUserId");
 
                     b.HasOne("PaddlersParadise.Models.RiverRun", "riverRun")

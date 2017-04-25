@@ -103,10 +103,11 @@ namespace PaddlersParadise.Controllers
         [HttpPost]
         public async Task<IActionResult> AddExperience(string experience, int runId)
         {
-            Debug.WriteLine("************" + experience);
+            
             var user = await _userManager.GetUserAsync(User);
             var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
-            Experience newExperience = new Experience(experience, user, selectedRun);
+            Experience newExperience = new Experience(experience, selectedRun);
+            newExperience.experienceUser = user;
             db.Experiences.Add(newExperience);
             db.SaveChanges();
             return RedirectToAction("RunDetails", new { id = runId });
