@@ -45,7 +45,7 @@ namespace PaddlersParadise.Controllers
         
         public IActionResult RunDetails(int id)
         {
-            Debug.WriteLine("*************RunId" + id);
+            //Debug.WriteLine("*************RunId" + id);
             return View(db.RiverRuns.FirstOrDefault(i=>i.id == id));
         }
         public IActionResult GaugeDetails(int id)
@@ -97,12 +97,18 @@ namespace PaddlersParadise.Controllers
             var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
             selectedRun.description = description;
             db.SaveChanges();
-            Debug.WriteLine("************Run Id after update: " + runId);
+            
             return RedirectToAction("RunDetails", new { id = runId });
         }
         [HttpPost]
-        public IActionResult AddExperience(string description, int runId)
+        public async Task<IActionResult> AddExperience(string experience, int runId)
         {
+            Debug.WriteLine("************" + experience);
+            var user = await _userManager.GetUserAsync(User);
+            var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
+            Experience newExperience = new Experience(experience, user, selectedRun);
+            db.Experiences.Add(newExperience);
+            db.SaveChanges();
             return RedirectToAction("RunDetails", new { id = runId });
         }
     }
