@@ -19,9 +19,14 @@
         </tr>
     </thread>
     <tbody>
-       @foreach (var riverrun in Model)
-       {
-          
+        @{ 
+                var pageCount = 0;
+                var displayNumber = 30;
+            }
+        
+         @foreach (var riverrun in Model.Skip(displayNumber*pageCount).Take(25))
+         {
+           
            var riverString = riverrun.river_section.Split('[');
            string river = riverString[0];
            var runString = riverString[1].Split(']');
@@ -35,7 +40,9 @@
 
            //}
            //string[] result2 = Regex.Split(run, pattern2);
-            <tr>
+
+
+               <tr>
                 <td>
                     @river
                 </td>
@@ -56,6 +63,8 @@
                     </div>
                 </td>
             </tr>
+    
+    
                 <script>
                     var gaugeId = @riverrun.gauge_id;
                     $.ajax({
