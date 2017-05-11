@@ -1,4 +1,10 @@
 ﻿$(document).ready(function () {
+    
+    $("li").click(function () {
+        $('li').removeClass("active")
+        $(this).removeClass("disabled")
+        $(this).addClass("active")
+    });
     //setTimeout(function () {
     //    var gaugeArray = [];
     //    $("tr").each(function (index) {
@@ -10,6 +16,8 @@
 
     //}, 1000);
 });
+
+
 //var callUSGS = function (gaugeId) {
 //    $.ajax({
 //        url: "/RiverRun/USGSCall/",
