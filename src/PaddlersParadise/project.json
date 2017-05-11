@@ -24,7 +24,10 @@
       "version": "1.0.1",
       "type": "platform"
     },
-    "RestSharp.NetCore": "105.2.3"
+    "PagedList.Core.Mvc": "1.0.1",
+    "RestSharp.NetCore": "105.2.3",
+    "Sakura.AspNetCore.Mvc.PagedList": "2.0.12",
+    "Sakura.AspNetCore.PagedList": "2.0.2"
   },
 
   "tools": {

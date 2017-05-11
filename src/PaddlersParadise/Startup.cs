@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using PaddlersParadise.Models;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Sakura.AspNetCore.Mvc;
 
 namespace PaddlersParadise
 {
@@ -30,6 +31,11 @@ namespace PaddlersParadise
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+            services.AddBootstrapPagerGenerator(options =>
+            {
+                // Use default pager options.
+                options.ConfigureDefault();
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using PaddlersParadise.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
+using Sakura.AspNetCore;
+
+
 using static PaddlersParadise.Models.USGSResponse;
 using Microsoft.AspNetCore.Authorization;
 
@@ -25,11 +28,13 @@ namespace PaddlersParadise.Controllers
             _signInManager = signInManager;
            
         }
-        public IActionResult Index()
-        {
+        public IActionResult Index(int pagenumber)
+        {            
+            pagenumber = 1;                       
             var riverList = db.RiverRuns.ToList();
-          
-            return View(riverList);
+            int pageSize = 30;
+            IPagedList pagedRuns = riverList.ToPagedList(pageSize, pagenumber);
+            return View(pagedRuns);
         }
         [HttpPost]
         public IActionResult USGSCall(string gaugeId)
