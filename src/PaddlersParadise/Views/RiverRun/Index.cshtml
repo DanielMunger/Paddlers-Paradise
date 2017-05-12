@@ -11,9 +11,9 @@
 @model Sakura.AspNetCore.IPagedList<PaddlersParadise.Models.RiverRun>
 <h1>Runs in OR & WA</h1>
 
-<span>Total Players: @Model.TotalCount </span>
-
-<pager source="@Model"/>
+<div style="float:right;">
+    <pager source="@Model"/>
+</div>
 
 <table style="margin-bottom:75px;">
     <thread>

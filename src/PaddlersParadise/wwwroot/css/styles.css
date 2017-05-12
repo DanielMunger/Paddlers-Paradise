@@ -1,9 +1,9 @@
 ﻿body homeBody{
     background-image: url(http://community.nrs.com/duct-tape/wp-content/uploads/2013/05/LWS2013-37.jpg);
-    background-color:pink;
+    
 }
 table, th, tr, td{
-    border: 1px solid grey;
+    border: 1px solid black;
 }
 #gaugeDetails {
     display: none;
@@ -28,3 +28,7 @@ table, th, tr, td{
 nav {
     width : 100%;
 }
+.pagination li.active{
+   background-color:dodgerblue;
+}
+
