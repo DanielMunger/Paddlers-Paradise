@@ -6,13 +6,14 @@
 @using System;
 @using System.Text.RegularExpressions;
 
+
 @*@model List<PaddlersParadise.Models.RiverRun>*@
 @model Sakura.AspNetCore.IPagedList<PaddlersParadise.Models.RiverRun>
 <h1>Runs in OR & WA</h1>
 
 <span>Total Players: @Model.TotalCount </span>
 
-<pager source="Model"/>
+<pager source="@Model"/>
 
 <table style="margin-bottom:75px;">
     <thread>
@@ -93,4 +94,3 @@
     }
     </tbody>
 </table>
-@*<script src="~/js/RiverIndex.js"></script>*@

@@ -28,15 +28,24 @@ namespace PaddlersParadise.Controllers
             _signInManager = signInManager;
            
         }
-        public IActionResult Index()
-        {
-            
-            int pageNumber = 1;                       
-            var riverList = db.RiverRuns.ToList();
-            int pageSize = 30;
-            var pagedRuns = riverList.ToDynamicPagedList(pageSize, pageNumber);
-            return View(pagedRuns);
-            
+        
+        public IActionResult Index(int? page)
+        {       
+            if(page !=null)
+            {
+                var riverList = db.RiverRuns.ToList(); 
+                int pageSize = 30;
+                var pagedRuns = riverList.ToDynamicPagedList(pageSize, page.Value);
+                return View(pagedRuns);            
+            }
+            else
+            {
+                page = 1;    
+                var riverList = db.RiverRuns.ToList();
+                int pageSize = 30;
+                var pagedRuns = riverList.ToDynamicPagedList(pageSize, page.Value);
+                return View(pagedRuns);
+            }                                      
         }
         [HttpPost]
         public IActionResult USGSCall(string gaugeId)
