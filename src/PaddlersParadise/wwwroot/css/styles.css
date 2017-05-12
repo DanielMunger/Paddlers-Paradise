@@ -1,8 +1,18 @@
-﻿body homeBody{
-    background-image: url(http://community.nrs.com/duct-tape/wp-content/uploads/2013/05/LWS2013-37.jpg);
-    
+﻿#homeBody{    
+   height:100%;
+   background-image: url(http://community.nrs.com/duct-tape/wp-content/uploads/2013/05/LWS2013-37.jpg);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   
+}
+@media only screen and (min-width : 320px) and (max-width : 380px) {
+    #homebody{
+	    background: url(http://community.nrs.com/duct-tape/wp-content/uploads/2013/05/LWS2013-37.jpg) no-repeat center center fixed;
+    }
 }
 table, th, tr, td{
+    
     border: 1px solid black;
 }
 #gaugeDetails {
