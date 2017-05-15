@@ -107,15 +107,13 @@
         <h3>Run Description:</h3>
         <p>@Model.description</p>
         <h3>Experiences:</h3>
-        @if(Model.experiences !=null)
+        @foreach(var experience in ViewBag.experiences)
         {
-            @foreach(var experience in Model.experiences)
-            { 
-                <p>experience.ApplicationUser.UserName</p>
-                <p>experience</p>
-            }    
+            <p>@experience.experienceDescription</p>
+
         }
-        
+
+
         @if (User.Identity.IsAuthenticated)
         {
            <hr />

@@ -62,7 +62,8 @@ namespace PaddlersParadise.Controllers
         public IActionResult RunDetails(int id)
         {
             string idString = id.ToString();
-            var x = db.Experiences.Where(i => i.riverRun.id == id);
+            ViewBag.experiences = db.Experiences.Where(i => i.riverRun.id == id);
+           
             return View(db.RiverRuns.FirstOrDefault(i=>i.id == id));
         }
         public IActionResult GaugeDetails(int id)

@@ -21,5 +21,7 @@ namespace PaddlersParadise.Models
             riverRun = RiverRun;
             postedTime = DateTime.Now;
         }
+        public Experience()
+        { }
     }
 }
