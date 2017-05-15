@@ -62,7 +62,7 @@ namespace PaddlersParadise.Controllers
         public IActionResult RunDetails(int id)
         {
             string idString = id.ToString();
-            //var x = db.Experiences.Where(i => i.riverid = id);
+            var x = db.Experiences.Where(i => i.riverRun.id == id);
             return View(db.RiverRuns.FirstOrDefault(i=>i.id == id));
         }
         public IActionResult GaugeDetails(int id)
@@ -120,7 +120,8 @@ namespace PaddlersParadise.Controllers
         [HttpPost]
         public async Task<IActionResult> AddExperience(string experience, int runId)
         {
-            
+            Debug.WriteLine("experience*************** " + experience);
+            Debug.WriteLine("runid************* " + runId);
             var user = await _userManager.GetUserAsync(User);
             var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
             Experience newExperience = new Experience(experience, selectedRun);
