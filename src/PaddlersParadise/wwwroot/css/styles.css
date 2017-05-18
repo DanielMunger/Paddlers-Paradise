@@ -41,4 +41,6 @@ nav {
 .pagination li.active{
    background-color:dodgerblue;
 }
-
+.fa{
+    background-color:black;
+}
