@@ -8,7 +8,7 @@ namespace PaddlersParadise.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        //public virtual ICollection<Experience> Experiences { get; set; } Return to when DB is fixed.
+        public virtual ICollection<Experience> Experiences { get; set; } 
         public byte[] profilePicture { get; set; }
         public string displayName { get; set; }
         public string bio { get; set; }
