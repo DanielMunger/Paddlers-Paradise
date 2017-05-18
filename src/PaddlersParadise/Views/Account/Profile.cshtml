@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "PaddleBook: Run Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/ProfilePage.js"></script>
+@model PaddlersParadise.Models.ApplicationUser
+    @{
+        string Image = "";
+        if (Model.profilePicture != null)
+        {
+            var base64 = Convert.ToBase64String(Model.profilePicture);
+            Image = String.Format("data:image/gif;base64,{0}", base64);
+        }
+}
+
+
+<div class="row">
+  
+    <div class="col m8">
+        
+        <figure class="snip0057 blue">
+            <figcaption>                            
+                    <h2>@Model.displayName</h2>                                   
+                    <p>@Model.bio</p>      
+                <div class="icons"><a href="#"><i class="ion-ios-home"></i></a><a href="#"><i class="ion-ios-email"></i></a><a href="#"><i class="ion-ios-telephone"></i></a></div>
+            </figcaption>
+            <div class="image">                
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" />                
+            </div>
+            
+        </figure>
+    </div>
+</div>
+<div class="row">
+    <div class="col m4"></div>
+    <div class="col m8"><h2>Blank Space</h2></div>
+</div>

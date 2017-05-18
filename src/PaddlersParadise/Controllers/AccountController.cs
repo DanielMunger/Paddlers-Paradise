@@ -38,6 +38,12 @@ namespace SalesTracker.Controllers
             }
 
         }
+        public IActionResult Profile(string id)
+        {
+            Debug.WriteLine("*****UserName***** " + id);
+            var userProfile = _db.purplepeopleeaters.FirstOrDefault(user => user.UserName == id);
+            return View(userProfile);
+        }
         public IActionResult Register()
         {
 
