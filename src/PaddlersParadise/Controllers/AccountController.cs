@@ -22,11 +22,12 @@ namespace SalesTracker.Controllers
             _signInManager = signInManager;
             _db = db;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             if (User.Identity.Name != null)
             {
-                return View(_db.purplepeopleeaters.ToList());
+                var user = await _userManager.GetUserAsync(User);
+                return View(user);
             }
             else
             {
@@ -65,6 +66,7 @@ namespace SalesTracker.Controllers
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: true, lockoutOnFailure: false);
             if (result.Succeeded)
             {
+                
                 return RedirectToAction("Index");
             }
             else

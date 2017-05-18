@@ -1,9 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Manage User Roles";
+    ViewData["Title"] = "Profile";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model List<PaddlersParadise.Models.ApplicationUser>
+@model PaddlersParadise.Models.ApplicationUser
+<script src="~/js/ProfilePage.js"></script>
 
+<div class="row">
+    <div class="col m8">
+        <figure class="snip0057 red">
+            <figcaption>
+                <h2>Victoria <span>Pena</span></h2>
+                <p>A voice crackles in Calvin's radio: "Enemy fighters at two o'clock!" "Roger. What should I do until then?"</p>
+                <div class="icons"><a href="#"><i class="ion-ios-home"></i></a><a href="#"><i class="ion-ios-email"></i></a><a href="#"><i class="ion-ios-telephone"></i></a></div>
+            </figcaption>
+            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4" /></div>
+            <div class="position"><a data-target="modal1" class="waves-effect waves-light btn">Edit Profile</a></div>
+        </figure>    
+    </div>
+</div>
 
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Edit Profile Information</h4>
+        <div class="contianer">
+            <form method="post" asp-action="EditProfile" asp-controller="Account">
+                <label for="displayName">Display Name</label>
+                <input type="text" name="displayName"   />
+                <label for="bio">Bio/Blurb/About</label>
+                <input type="text" name="bio"   />
+                <label for="profilePicture">Profile Picture</label>
+                <input type="file" name="profilePicture" />                
+                <input class="btn" type="submit" value="Edit" />
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
 
-<h1>Account Index</h1>
+<div class="row">
+    <div class="col m4"></div>
+    <div class="col m8">
+        <h1>blank space</h1>
+    </div>
+</div>
