@@ -15,7 +15,7 @@ namespace PaddlersParadise.Models
 
         }
         public virtual DbSet<RiverRun> RiverRuns { get; set; }
-        public virtual DbSet<Experience> Experiences { get; set; }
+        //public virtual DbSet<Experience> Experiences { get; set; } Return to when DB is fixed.
         public virtual DbSet<ApplicationUser> purplepeopleeaters { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {

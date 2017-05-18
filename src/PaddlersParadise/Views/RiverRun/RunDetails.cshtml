@@ -106,12 +106,12 @@
     <div class="row">
         <h3>Run Description:</h3>
         <p>@Model.description</p>
-        <h3>Experiences:</h3>
+        @*<h3>Experiences:</h3>
         @foreach(var experience in ViewBag.experiences)
         {
             <p>@experience.experienceDescription</p>
 
-        }
+        }*@
 
 
         @if (User.Identity.IsAuthenticated)
@@ -136,7 +136,7 @@
                     </form>
                 </div>
             </div>
-            <div id="modal4" class="modal">
+            @*<div id="modal4" class="modal">
                 <div class="modal-content">
                     <h4>Run Experience</h4>
                     <p>Add an experience to this run. Share any thoughts about the river, local secrets, or helpful driving directions.</p>
@@ -150,7 +150,7 @@
                         <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Add Experience" />
                     </form>
                 </div>
-            </div>
+            </div>*@
 
         }
     </div><br /><br />

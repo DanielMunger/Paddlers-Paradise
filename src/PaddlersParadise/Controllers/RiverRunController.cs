@@ -62,7 +62,7 @@ namespace PaddlersParadise.Controllers
         public IActionResult RunDetails(int id)
         {
             string idString = id.ToString();
-            ViewBag.experiences = db.Experiences.Where(i => i.riverRun.id == id);
+            //ViewBag.experiences = db.Experiences.Where(i => i.riverRun.id == id);
            
             return View(db.RiverRuns.FirstOrDefault(i=>i.id == id));
         }
@@ -118,18 +118,21 @@ namespace PaddlersParadise.Controllers
             
             return RedirectToAction("RunDetails", new { id = runId });
         }
-        [HttpPost]
-        public async Task<IActionResult> AddExperience(string experience, int runId)
-        {
-            Debug.WriteLine("experience*************** " + experience);
-            Debug.WriteLine("runid************* " + runId);
-            var user = await _userManager.GetUserAsync(User);
-            var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
-            Experience newExperience = new Experience(experience, selectedRun);
-            newExperience.userId = user.Id;
-            db.Experiences.Add(newExperience);
-            db.SaveChanges();
-            return RedirectToAction("RunDetails", new { id = runId });
-        }
+        //[HttpPost]
+
+        //Return to when DB is fixed
+
+        //public async Task<IActionResult> AddExperience(string experience, int runId)
+        //{
+        //    Debug.WriteLine("experience*************** " + experience);
+        //    Debug.WriteLine("runid************* " + runId);
+        //    var user = await _userManager.GetUserAsync(User);
+        //    var selectedRun = db.RiverRuns.FirstOrDefault(run => run.id == runId);
+        //    Experience newExperience = new Experience(experience, selectedRun);
+        //    newExperience.userId = user.Id;
+        //    db.Experiences.Add(newExperience);
+        //    db.SaveChanges();
+        //    return RedirectToAction("RunDetails", new { id = runId });
+        //}
     }
 }

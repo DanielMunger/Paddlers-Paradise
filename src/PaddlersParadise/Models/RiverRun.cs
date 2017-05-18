@@ -17,7 +17,7 @@ namespace PaddlersParadise.Models
         public int gauge_id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public List<Experience> experiences { get; set; }
+        //public List<Experience> experiences { get; set; } return to when DB is fixed.
 
         [Key]
         public int id { get; set; }
