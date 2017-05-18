@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using PaddlersParadise.Models;
 using Microsoft.AspNetCore.Identity;
 using PaddlersParadise.ViewModels;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using System.Diagnostics;
 
 namespace SalesTracker.Controllers
 {
@@ -74,16 +77,41 @@ namespace SalesTracker.Controllers
                 return View();
             }
         }
+        public async Task<IActionResult> EditProfile(string displayName, string bio, IFormFile profilePicture)
+        {
+            Debug.WriteLine("displayName****** " + displayName + " bio***** " + bio + " profilePic" + profilePicture);
+            var user = await _userManager.GetUserAsync(User);
+            var userInDb = _db.purplepeopleeaters.FirstOrDefault(appUser => appUser.Id == user.Id);
+            if(displayName!=null)
+            {
+                userInDb.displayName = displayName;
+            }
+            if(bio!=null)
+            {
+                userInDb.bio = bio;
+            }
+            byte[] pictureArray = new byte[0];
+            if (profilePicture != null)
+            {
+                using (var fileStream = profilePicture.OpenReadStream())
+                using (var ms = new MemoryStream())
+                {
+                    fileStream.CopyTo(ms);
+                    pictureArray = ms.ToArray();
+                }
+            }
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         
-        //[HttpPost]
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-        public IActionResult Details()
-        {
-            return View();
-        }
+        //public IActionResult Details()
+        //{
+        //    return View();
+        //}
     }
 }
