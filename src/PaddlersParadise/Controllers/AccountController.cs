@@ -73,7 +73,7 @@ namespace SalesTracker.Controllers
             }
         }
         
-        [HttpPost]
+        //[HttpPost]
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
