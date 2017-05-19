@@ -198,3 +198,24 @@ figure.snip0057.hover:before {
     left: 0px;
   }
 }
+
+.about-me {
+    margin-top: 12%;
+    float: right;
+  color: #f2f7ff;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 400px;
+  margin-left: 150px;
+  font-family: serif;
+  border: none;
+  border-radius: 15px;
+}
+.about-me .one{
+  border-radius: 0px 0px 15px 15px;
+}
+.about-me h1{
+  font-family: "Big Caslon";
+  text-decoration: underline;
+  text-align: center;
+  letter-spacing: 4px;
+}

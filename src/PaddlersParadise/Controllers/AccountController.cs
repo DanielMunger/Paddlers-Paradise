@@ -104,6 +104,7 @@ namespace SalesTracker.Controllers
                 {
                     fileStream.CopyTo(ms);
                     pictureArray = ms.ToArray();
+                    userInDb.profilePicture = pictureArray;
                 }
             }
             _db.SaveChanges();
@@ -115,9 +116,6 @@ namespace SalesTracker.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-        //public IActionResult Details()
-        //{
-        //    return View();
-        //}
+       
     }
 }
